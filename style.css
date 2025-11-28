@@ -1,0 +1,448 @@
+:root {
+  --text-color: #2F281E;
+  --link-color: #1943ef;
+  --hover-color: rgba(0, 123, 255, 0.1);
+  --popup-bg-color: rgba(211, 255, 192, 0.8);
+  --popup-overlay-color: rgba(0, 0, 0, 0.7);
+  --popup-text-color: rgb(0, 129, 33);
+  --popup-button-color: rgba(211, 255, 192, 0.5);
+
+  --font-main-header-size: 2.8rem;
+  --line-main-header-height: 3.0rem;
+  --font-basic-header-size: 2.4rem;
+  --line-basic-header-height: 2.6rem;
+  --font-size: 2.1rem;
+  --line-height: 2.3rem;
+
+  --print-font-main-header-size: 1.8rem;
+  --print-line-main-header-height: 2.0rem;
+  --print-font-basic-header-size: 1.6rem;
+  --print-line-basic-header-height: 1.8rem;
+  --print-font-size: 1.4rem;
+  --print-line-height: 1.6rem;
+
+  --mobile-font-main-header-size: 1.8rem;
+  --mobile-line-main-header-height: 2.0rem;
+  --mobile-font-basic-header-size: 1.6rem;
+  --mobile-line-basic-header-height: 1.8rem;
+  --mobile-font-size: 1.4rem;
+  --mobile-line-height: 1.6rem;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 10px;
+}
+
+body {
+  font-style: normal;
+  font-weight: normal;
+  font-family: 'Calibri', Arial, sans-serif;
+  color: var(--text-color);
+  margin: 0;
+  padding: 15px;
+}
+
+h3 {
+  font-size: var(--font-main-header-size);
+  line-height: var(--line-main-header-height);
+}
+
+h4 {
+  font-size: var(--font-basic-header-size);
+  line-height: var(--line-basic-header-height);
+}
+
+.wrapper {
+  max-width: 1197px;
+  margin: auto;
+}
+
+.popup {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background-color: var(--popup-overlay-color);
+  top: 0;
+  left: 0;
+  opacity: 0;
+  visibility: hidden;
+  overflow-y: auto;
+  overflow-x: hidden;
+  transition: all 0.3s ease 0s;
+}
+
+.popup__body {
+  min-height: 100%;
+  display: flex;
+  align-items: start;
+  justify-content: center;
+  padding: 30px 10px;
+}
+
+.popup__content {
+  background-color: var(--popup-bg-color);
+  color: var(--popup-text-color);
+  max-width: 880px;
+  padding: 30px 30px;
+  position: relative;
+  border-radius: 8px;
+  transition: all 0.8s ease 0s;
+  transform: translate(0, 10%);
+}
+
+.popup__title {
+  flex-basis: 90%;
+  flex-grow: 1;
+  margin: 0 0 10px;
+}
+
+.popup__button {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  background: transparent;
+  line-height: normal;
+  font-size: calc(var(--font-size) + 0.5rem);
+  text-shadow: 0.1px 0.1px 0 var(--popup-text-color);
+  color: var(--popup-button-color);
+  border: transparent;
+}
+
+.popup__button:hover {
+  cursor: pointer;
+  transition: all 0.2s ease-out;
+  transform: scale(1.05);
+  color: var(--hover-color);
+}
+
+.popup__list kbd {
+  font-weight: 700;
+}
+
+.popup__list {
+  flex-basis: 100%;
+  margin: 0;
+  list-style-type: circle;
+}
+
+.popup__text {
+  font-size: var(--font-size);
+  font-weight: 500;
+}
+
+.popup__button:active {
+  opacity: 0.7;
+}
+
+.popup.show {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* header */
+.header__wrapper {
+  margin: 30px auto auto auto;
+  display: flex;
+  flex-direction: row-reverse;
+  flex-wrap: wrap;
+  align-items: start;
+}
+
+.change-lang {
+  color: var(--text-color);
+  font-weight: 500;
+  font-size: var(--font-size);
+  padding: 8px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border: 1px solid transparent;
+  text-align: center;
+  cursor: pointer;
+  outline: none;
+  opacity: 0.7;
+}
+
+.change-lang::-ms-expand {
+  display: none;
+}
+
+.change-lang:hover {
+  color: var(--link-color);
+  opacity: 0.9;
+}
+
+.header__title {
+  flex-basis: 90%;
+  font-family: 'Calibri Light', 'Calibri', Arial, sans-serif;
+}
+
+.header__name,
+.header__applied-position {
+  text-align: center;
+  margin-top: 0;
+  margin-bottom: 16px;
+}
+
+/* contacts */
+.contacts__wrapper {
+  border-bottom: 2px solid rgba(0, 0, 0, 0.05);
+  display: flex;
+  flex-wrap: wrap;
+  font-size: var(--font-size);
+}
+
+.contact__location {
+  flex-basis: 100%;
+  margin: 0 0 3px 0;
+}
+
+.contact__links {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.contact__link {
+  flex-shrink: 1;
+  margin: 0 20px 10px 0;
+  cursor: pointer;
+}
+
+.contact__link:first-child {
+  margin-left: 0;
+}
+
+.contact__link:last-child {
+  margin-right: 0;
+}
+
+.contact__link a {
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  color: var(--link-color);
+}
+
+.contact__link a:hover {
+  transition: border-bottom-color 0.3s ease-out;
+  border-bottom-color: var(--link-color);
+}
+
+.ico {
+  display: inline-block;
+}
+
+.ico_location,
+.ico_phone,
+.ico_gmail,
+.ico_ln {
+  background-size: 25px;
+  background-position: left center;
+  width: 25px;
+  height: 25px;
+}
+
+.ico_location {
+  background-image: url("./assets/icons/icons8-location-48.png");
+}
+
+.ico_phone {
+  background-image: url("./assets/icons/icons8-phone-50.png");
+}
+
+.ico_gmail {
+  background-image: url("./assets/icons/icons8-email-50.png");
+}
+
+.ico_ln {
+  background-image: url("./assets/icons/icons8-linkedin-50.png");
+}
+
+/* summary */
+.summary__wrapper,
+.experience__wrapper,
+.education__wrapper,
+.cert__wrapper,
+.languages__wrapper,
+.skills__wrapper {
+  margin: 10px auto auto auto;
+}
+
+.text {
+  font-size: var(--font-size);
+  margin: 0 auto;
+}
+
+.summary__title,
+.experience__title,
+.education__title,
+.cert__title,
+.languages__title,
+.skills__title {
+  margin: 0 auto;
+}
+
+/* experience */
+.company,
+.employee {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.company__name,
+.company__location,
+.employee__position,
+.employment__period {
+  font-weight: 700;
+  font-size: var(--font-size);
+  line-height: var(--line-height);
+  margin: 0;
+}
+
+.employee__achievment-list {
+  margin: 0 auto 3px;
+  font-size: var(--font-size);
+}
+
+/* education, cert, languages */
+.education__list,
+.cert__list,
+.languages__list {
+  list-style-type: none;
+  padding: 0;
+  margin: 0 auto;
+  font-size: var(--font-size);
+}
+
+/* footer */
+.footer__wrapper {
+  margin: 50px auto auto auto;
+  padding: 10px 0;
+}
+
+.copy-right {
+  color: var(--text-color);
+  text-align: right;
+  font-size: var(--font-size);
+  opacity: 0.6;
+}
+
+@media (max-width: 430px) {
+
+  h3 {
+    font-size: var(--mobile-font-main-header-size);
+    line-height: var(--mobile-line-main-header-height);
+  }
+
+  h4 {
+    font-size: var(--mobile-font-basic-header-size);
+    line-height: var(--mobile-line-basic-header-height);
+  }
+  
+  .employee__achievment-list {
+    padding-left: 15px;
+  }
+
+  .popup,
+  .copy-right,
+  .text,
+  .contacts__wrapper,
+  .contact__location,
+  .contact__link,
+  .company__name,
+  .company__location,
+  .employee__position,
+  .employment__period,
+  .change-lang {
+    font-size: var(--mobile-font-size);
+    line-height: var(--mobile-line-height);
+  }
+
+  .copy-right {
+    text-align: center;
+  }
+}
+
+@media print {
+  @page {
+    size: A4;
+    margin: 1cm 1.5cm;
+  }
+
+  body {
+    width: 210mm;
+    height: 297mm;
+  }
+
+  h3 {
+    font-size: var(--print-font-main-header-size);
+    line-height: var(--print-line-main-header-height);
+  }
+
+  h4 {
+    font-size: var(--print-font-basic-header-size);
+    line-height: var(--print-line-basic-header-height);
+  }
+
+  .wrapper {
+    opacity: 1;
+  }
+
+  .change-lang {
+    visibility: hidden;
+  }
+
+  .popup,
+  .footer,
+  .ico_location,
+  .ico_phone,
+  .ico_gmail,
+  .ico_ln {
+    display: none;
+  }
+
+  .header__name,
+  .header__applied-position {
+    margin-bottom: 8px;
+  }
+
+  .contact__link {
+    margin-right: 8px;
+  }
+
+  .contact__link a {
+    color: var(--text-color);
+  }
+
+  .contact__location::before {
+    content: "Location:";
+    font-weight: 600;
+  }
+
+  .contact__link:first-child::before {
+    content: "Contacts:";
+    font-weight: 600;
+  }
+
+  .contact__link:not(:last-child)::after {
+    content: "|";
+    margin-left: 8px;
+  }
+
+  .text,
+  .contacts__wrapper,
+  .contact__location,
+  .contact__link,
+  .company__name,
+  .company__location,
+  .employee__position,
+  .employment__period {
+    font-size: var(--print-font-size);
+    line-height: var(--print-line-height);
+  }
+
+}

@@ -1,0 +1,15 @@
+[
+    {
+        "header": {
+            "fullName": "Черноусов Олег Иванович",
+            "position": "Fullstack Developer (Middle Java Backend | Junior JavaScript Frontend)",
+            "contacts": {
+                "contactLocation": "Россия. Готов к переезду"
+            }
+        },
+        "summary": {
+            "summaryTitle": "РЕЗЮМЕ",
+            "summaryText": "Middle Java-разработчик с 4,5 годами коммерческого опыта в создании высоконагруженных backend-систем на основе Java и Spring Boot. Участвовал в разработке комплексных решений для крупных отраслей экономики, включая проекты с высокой нагрузкой и сложными бизнес-процессами. Активно развиваюсь в направлении frontend-разработки, изучаю JavaScript, HTML5, CSS3 (SCSS/SASS, Grid, Flexbox), TypeScript и реализую pet-проекты. Планирую освоить ReactJS, чтобы двигаться к полноценной fullstack-разработке. Открыт к обучению и освоению новых технологий."
+        }
+    }
+]
